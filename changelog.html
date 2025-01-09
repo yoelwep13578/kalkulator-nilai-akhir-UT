@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<title>UT's Score Calculator</title>
+	<!-- File CSS -->
+	<link rel="stylesheet" href="./style.css">
+	<!-- Font Online -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1 class="title">Kalkulator Nilai Akhir</h1>
+		<p class="second-title">Universitas Terbuka</p>
+	</header>
+	<main>
+		<section class="score-information-card">
+			<section>
+				<p>Hasil Pengerjaan Ujian</p>
+				<div class="flex">
+					<div class="field-nilai-benar">
+						<p>Benar</p>
+						<input type="number" id="nilai-benar" class="nilai-benar">
+					</div>
+					<p class="slash-sign">/</p>
+					<div class="field-jumlah-soal">
+						<p>Soal</p>
+						<input type="number" id="jumlah-soal" class="jumlah-soal" placeholder="50">
+					</div>
+					<div class="field-nilai-ujian-sementara">
+						<p id="nilai-ujian-sementara"></p>
+					</div>
+				</div>
+				
+				<p>Hasil Nilai Masa Tutorial</p>
+				<div class="field-jenis-tutorial">
+					<p>Jenis Tutorial</p>
+					<div class="flex">
+						<select id="jenis-tutorial">
+							<option value="online">Online (TUTON)</option>
+							<option value="webinar">Webinar (TUWEB)</option>
+							<option value="tatap-muka">Tatap Muka (TTM)</option>
+							<option value="penugasan">Penugasan (TMK)</option>
+						</select>
+						<p id="info-tunjangan-nilai"></p>
+					</div>
+				</div>
+				<div class="field-nilai-akumulasi">
+					<p>Nilai Akumulasi</p>
+					<input type="number" id="nilai-akumulasi" class="nilai-akumulasi">
+				</div>
+
+				<p>Mata Kuliah</p>
+				<div class="field-tingkat-kesulitan">
+					<p>Tingkat Kesulitan</p>
+					<select id="tingkat-kesulitan">
+						<option value="mudah">Mudah</option>
+						<option value="sedang">Sedang</option>
+						<option value="sulit">Sulit</option>
+					</select>
+				</div>
+			</section>
+
+			<div class="line-separator">
+				<div class="line"></div>
+			</div>
+
+			<section class="hasil-hitungan">
+				<p>Perkiraan Nilai Akhirmu Adalah</p>
+				<div class="flex-centered">
+					<div class="field-nilai-akhir">
+						<p id="nilai-akhir"></p>
+					</div>
+					<div class="field-keterangan">
+						<p id="keterangan"></p>
+					</div>
+				</div>
+				<p id="text-penyemangat" class="text-penyemangat"></p>
+			</section>
+		</section>
+
+		<!-- Konten -->
+		<section class="content">
+			<h2>Informasi Singkat</h2>
+			<p>Website ini menyediakan kalkulator untuk menghitung perkiraan nilai akhir berdasarkan nilai di masa ujian dan nilai di masa tutorial. Tools ini dibuat dengan menggunakan HTML, CSS, dan Javascript secara sederhana untuk menghitung perkiraan nilai akhir yang akan diperoleh nantinya.</p>
+			<p>Nilai akhir yang dihasilkan oleh kalkulator ini bersifat perkiraan dan tidak bersifat final. Nilai akhir yang sebenarnya akan diumumkan oleh dosen pengampu mata kuliah. Berdoa saja agar nilai tinggi yang ditampilkan di kalkulator ini benar-benar menjadi kenyataan :)</p>
+			
+			<h2>Predikat Nilai Minimum Setiap Kesulitan Mata Kuliah</h2>
+			<div class="table">
+				<table class="table-standar-nilai">
+					<thead>
+						<tr>
+							<th>Mudah</th>
+							<th>Sedang</th>
+							<th>Sulit</th>
+							<th>Keterangan</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>E</td>
+						</tr>
+						<tr>
+							<td>40</td>
+							<td>35</td>
+							<td>30</td>
+							<td>D</td>
+						</tr>
+						<tr>
+							<td>50</td>
+							<td>45</td>
+							<td>40</td>
+							<td>C-</td>
+						</tr>
+						<tr>
+							<td>55</td>
+							<td>50</td>
+							<td>45</td>
+							<td>C</td>
+						</tr>
+						<tr>
+							<td>60</td>
+							<td>55</td>
+							<td>50</td>
+							<td>B-</td>
+						</tr>
+						<tr>
+							<td>70</td>
+							<td>65</td>
+							<td>60</td>
+							<td>B</td>
+						</tr>
+						<tr>
+							<td>75</td>
+							<td>70</td>
+							<td>65</td>
+							<td>A-</td>
+						</tr>
+						<tr>
+							<td>80</td>
+							<td>75</td>
+							<td>70</td>
+							<td>A</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<h2>Panduan - Cara Pakai</h2>
+			<video autoplay muted loop>
+				<source src="./videos/guidance.mp4" type="video/mp4">
+			</video>
+			<ol>
+				<li>Masukkan nilai benar yang diperoleh pada ujian di bagian "Benar".</li>
+				<li>Masukkan jumlah soal ujian di bagian "Soal". <br>Nilai ujian dengan format 0-100 akan tampil di samping secara otomatis.</li>
+				<li>Pilih jenis tutorial yang diikuti pada bagian "Jenis Tutorial". <br>Persentase nilai ujian dan nilai yang ditopang tutorial akan tampil di sebelahnya.</li>
+				<li>Masukkan nilai akumulasi yang diperoleh pada masa tutorial di bagian "Nilai Akumulasi".</li>
+				<li>Pilih tingkat kesulitan mata kuliah pada bagian "Tingkat Kesulitan".</li>
+				<li>Perkiraan nilai akhir akan tampil di bagian "Perkiraan Nilai Akhirmu Adalah". Di sana ada nilai akhir beserta predikat ABCDE-nya</li>
+			</ol>
+
+			<h2>Cara Kerja</h2>
+			<h3>Nilai Ujian Berformat 0-100</h3>
+			<p>Setelah menuntaskan ujian, biasanya akan tampil hasil pengerjaan ujian kita di layar. Nilai yang ditampilkan hanyalah Jawaban Benar dan Banyaknya Soal Ujian. Untuk mengetahui nilai 0-100, maka digunakanlah rumus perhitungan ini:</p>
+			<img src="./images/rumus/nilaiUjian.svg" alt="Rumus Nilai Ujian">
+			<p>Misalnya ada contoh dengan Soal Benar = 30 dan Jumlah Soal = 50, jadinya:</p>
+			<img src="./images/rumus/nilaiUjian-contoh.svg" alt="Contoh Nilai Ujian">
+			<img src="./images/rumus/nilaiUjian-contoh2.svg" alt="Contoh Nilai Ujian 2">
+
+			<h3>Topangan Nilai Tutorial</h3>
+			<p>Layaknya di masa sekolah, nilai ujian juga bisa ditopang oleh nilai tambahan dari tutorial. Setiap jenis tutorial memiliki topangan/porsi nilai yang beda-beda.</p>
+			<div class="table">
+				<table class="table-topangan-nilai">
+					<thead>
+						<tr>
+							<th>Jenis Tutorial</th>
+							<th>% Topangan Tutorial</th>
+							<th>% Nilai Ujian</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Online (TUTON)</td>
+							<td>30%</td>
+							<td>70%</td>
+						</tr>
+						<tr>
+							<td>Webinar (TUWEB)</td>
+							<td>50%</td>
+							<td>50%</td>
+						</tr>
+						<tr>
+							<td>Tatap Muka (TTM)</td>
+							<td>50%</td>
+							<td>50%</td>
+						</tr>
+						<tr>
+							<td>Penugasan (TMK)</td>
+							<td>20%</td>
+							<td>80%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>Setelah melewati pengondisian ini, nilai ujian dan nilai akumulasi tutorial akan diolah berasarkan porsinya melalui rumus perhitungan ini.</p>
+			<img src="./images/rumus/nilaiUjian-tutorial.svg" alt="Rumus Nilai Ujian dengan Porsi Tutorial">
+			<img src="./images/rumus/nilaiTutorial-tutorial.svg" alt="Rumus Nilai Tutorial dengan Porsi Tutorial">
+			<p>Sebagai contoh, nilai ujiannya 60, nilai akumulasi tutorialnya 95, dengan jenis tutorial "Online/TUTON" (30% Tutorial & 70% Ujian), jadinya:</p>
+			<img src="./images/rumus/nilaiUjian-tutorial-contoh.svg" alt="Contoh Nilai Ujian dengan Porsi Tutorial">
+			<img src="./images/rumus/nilaiTutorial-tutorial-contoh.svg" alt="Contoh Nilai Tutorial dengan Porsi Tutorial">
+
+			<h3>Perkiraan Nilai Akhir</h3>
+			<p>Setelah nilai ujian dan nilai tutorial diolah, maka akan dihasilkan nilai akhir yang bersifat perkiraan. Pada dasarnya, nilai akhir bisa diperoleh dengan menggunakan rumus perhitungan ini.</p>
+			<p class="note">Nilai/variabel yang diberi tanda "[ ]" adalah nilai yang terolah dengan porsi tutorial</p>
+			<img src="./images/rumus/nilaiAkhir.svg" alt="Rumus Nilai Akhir">
+			<p>Tapi, ada pengecualian untuk kondisi tertentu. Pertama, ketika nilai ujian lebih/sama dengan nilai tutorial, nilai ujianlah yang diambil sebagai nilai akhirnya.</p>
+			<img src="./images/rumus/nilaiAkhir-gedeUjian.svg" alt="Ketika Nilai Ujian >= Nilai Tutorial">
+			<img src="./images/rumus/nilaiAkhir-gedeUjian1.svg" alt="Nilai Ujian >= Nilai Tutorial">
+			<p>Kedua, ketika nilai ujian kurang dari nilai tutorial, rumus sebelumnya akan dipakai.</p>
+			<img src="./images/rumus/nilaiAkhir-kecilUjian.svg" alt="Ketika Nilai Ujian < Nilai Tutorial">
+			<img src="./images/rumus/nilaiAkhir-kecilUjian1.svg" alt="Nilai Ujian < Nilai Tutorial">
+			<p>Ketiga, ketika nilai ujiannya kurang dari 30, nilai tutorial tidak bisa dipakai untuk menopang kekurangannya.</p>
+			<img src="./images/rumus/nilaiAkhir-kecil.svg" alt="Ketika Nilai Ujian < 30">
+			<img src="./images/rumus/nilaiAkhir-kecil1.svg" alt="Nilai Ujian < 30">
+			<p>Tahapan paling terakhir dari perhitungan ini adalah mencocokkan predikat nilai berdasarkan standar tingkat kesulitan mata kuliahnya, melalui tabel yang sudah ada di atas.</p>
+
+			<h2>FAQ - Frequently Asked Questions</h2>
+			<p><b>Q: Apakah nilai akhir yang dihasilkan oleh kalkulator ini benar-benar akurat?</b><br>A: Tidak 100% akurat, karena sifatnya perkiraan dan bukan nilai yang pasti. Nilai akhir yang sebenarnya akan diumumkan oleh dosen pengampu mata kuliah.</p>
+			<p><b>Q: Kenapa tidak dibikin tombol submit seperti layaknya tools kalkulator lain?</b><br>A: Karena tools ini tugasnya hanya menghitung nilai dan langsung menampilkan apa adanya. Jadi, developer mikir bahwa sepertinya gak perlu tombol submit seperti itu. Hehehe.</p>
+			<p><b>Q: Standar nilai UT kan kadang-kadang bisa berganti seiring berjalannya waktu, bagaimana cara mengusulkan update untuk tools ini?</b><br>A: Adukan saja usulan dan masalah yang ada di tools ini melalui Issues di GitHub-nya. Insya-Allah kalo developernya gabut bisa langsung kerjain usulan yang diberikan.</p>
+			<p><b>Q: Apakah tools ini bisa diakses di HP?</b><br>A: Bisa dong, tools ini sudah diatur agar bisa diakses di HP. Tapi, lebih enak sih diakses di laptop atau PC biar lebih leluasa.</p>
+			<p><b>Q: Apakah tools ini bisa diakses di browser apa saja?</b><br>A: Seharusnya bisa diakses di browser apapun, karena tools ini dibuat dengan teknologi web yang standar. Cuma HTML, CSS, JS aja kok.</p>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2025 - Kalkulator Nilai Akhir UT</p>
+		<div class="button-group">
+			<a href="https://trakteer.id/yoeru-san/tip"><button>Traktir/Beliin Kopi</button></a>
+			<a href="https://github.com/yoelwep13578/kalkulator-nilai-akhir-UT/issues"><button>Lapor Masalah/Usul Update</button></a>
+		</div>
+		<p>Developed by Yoeru - Last Update 8 Jan 2025</p>
+	</footer>
+</body>
+<script src="./script.js"></script>
+</html>
