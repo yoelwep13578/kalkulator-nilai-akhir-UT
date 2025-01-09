@@ -57,22 +57,6 @@ Ketiga, ketika nilai ujiannya kurang dari 30, nilai tutorial tidak bisa dipakai 
 
 Tahapan paling terakhir dari perhitungan ini adalah mencocokkan predikat nilai berdasarkan standar tingkat kesulitan mata kuliahnya, melalui tabel yang sudah ada di atas.
 
-## FAQ - Frequently Asked Questions
-
-**Q: Apakah nilai akhir yang dihasilkan oleh kalkulator ini benar-benar akurat?**  
-A: Tidak 100% akurat, karena sifatnya perkiraan dan bukan nilai yang pasti. Nilai akhir yang sebenarnya akan diumumkan oleh dosen pengampu mata kuliah.
-
-**Q: Kenapa tidak dibikin tombol submit seperti layaknya tools kalkulator lain?**  
-A: Karena tools ini tugasnya hanya menghitung nilai dan langsung menampilkan apa adanya. Jadi, developer mikir bahwa sepertinya gak perlu tombol submit seperti itu. Hehehe.
-
-**Q: Standar nilai UT kan kadang-kadang bisa berganti seiring berjalannya waktu, bagaimana cara mengusulkan update untuk tools ini?**  
-A: Adukan saja usulan dan masalah yang ada di tools ini melalui Issues di GitHub-nya. Insya-Allah kalo developernya gabut bisa langsung kerjain usulan yang diberikan.
-
-**Q: Apakah tools ini bisa diakses di HP?**  
-A: Bisa dong, tools ini sudah diatur agar bisa diakses di HP. Tapi, lebih enak sih diakses di laptop atau PC biar lebih leluasa.
-
-**Q: Apakah tools ini bisa diakses di browser apa saja?**  
-A: Seharusnya bisa diakses di browser apapun, karena tools ini dibuat dengan teknologi web yang standar. Cuma HTML, CSS, JS aja kok.
 
 ## End Note
 
