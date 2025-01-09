@@ -48,6 +48,7 @@ main {
   justify-content: space-between;
   padding: 0% 5% 0% 5%;
   background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
 }
 
 .score-information-card > section {
@@ -185,17 +186,43 @@ input, select {
   color: rgb(51, 51, 109);
 }
 
-.content ol {
+.content ol,
+.content ul {
   margin-left: 2rem;
 }
-.content ol li {
-  padding-left: 1rem;
+.content ol li,
+.content ul li {
+  padding-left: 0.7rem;
   line-height: 1.5rem;
   font-style: italic;
+  margin-bottom: 1rem;
+}
+.content ol li:last-child,
+.content ul li:last-child {
+  margin-bottom: 0px;
 }
 
 .content video {
   width: 100%;
+}
+
+/* ChangeLog */
+.window-content {
+  padding: 10px;
+}
+.window-content .window-box {
+  padding: 10px;
+  border: 1px solid black;
+}
+.window-box > div {
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+}
+.window-box > div > p {
+  color: grey;
+}
+.window-box li > b {
+  font-weight: 800;
 }
 
 /* Footer */
@@ -208,6 +235,7 @@ footer {
 
 footer .button-group {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 10px 0px 10px 0px;
 }
@@ -217,14 +245,27 @@ footer button {
   border: 1px solid white;
   color: white;
   padding: 10px;
-  margin: 0px 10px 0px 10px;
+  margin: 5px 10px;
+  transition: 200ms;
+  width: calc(100% - 20px);
 }
+footer button:hover,
 footer button:active {
   background-color: white;
   color: black;
+  transition: 0s;
 }
 
 /* RESPONSIVE IN TABLET */
+@media screen and (min-width: 600px) {
+  footer .button-group {
+    flex-direction: row;
+  }
+  footer button {
+    width: unset;
+  }
+}
+
 @media screen and (min-width: 800px) {
   header {
     height: 50vh;
@@ -235,7 +276,6 @@ footer button:active {
   .score-information-card {
     flex-direction: row;
     align-items: center;
-    border: 1px solid black;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
   }
   
@@ -259,6 +299,13 @@ footer button:active {
 
     .content {
       width: 700px;
+    }
+  }
+
+  @media screen and (min-height: 1000px) {
+    header {
+      height: 500px;
+      margin-bottom: -350px;
     }
   }
 }
