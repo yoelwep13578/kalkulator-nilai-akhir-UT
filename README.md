@@ -64,5 +64,3 @@ Tahapan paling terakhir dari perhitungan ini adalah mencocokkan predikat nilai b
 
 [Traktir/Beliin Kopi](https://trakteer.id/yoeru-san/tip)  
 [Lapor Masalah/Usul Update](https://github.com/yoelwep13578/kalkulator-nilai-akhir-UT/issues)
-
-Developed by Yoeru - Last Update 8 Des 2025
