@@ -1,5 +1,8 @@
 # Kalkulator Nilai Akhir UT
 
+> [!NOTE]
+> Kalkulator ini sudah kurang relevan sejak pemberlakuan kurikulum baru 2025 di Universitas Terbuka
+
 Website ini menyediakan kalkulator untuk menghitung perkiraan nilai akhir berdasarkan nilai di masa ujian dan nilai di masa tutorial. Tools ini dibuat dengan menggunakan HTML, CSS, dan Javascript secara sederhana untuk menghitung perkiraan nilai akhir yang akan diperoleh nantinya.
 
 Nilai akhir yang dihasilkan oleh kalkulator ini bersifat perkiraan dan tidak bersifat final. Nilai akhir yang sebenarnya akan diumumkan oleh dosen pengampu mata kuliah. Berdoa saja agar nilai tinggi yang ditampilkan di kalkulator ini benar-benar menjadi kenyataan :)
